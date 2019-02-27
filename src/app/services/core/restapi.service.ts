@@ -9,6 +9,7 @@ const httpOptions = {
    'Content-type': 'application/json'
  })
 };
+
 @Injectable({
   providedIn: 'root'
 })
@@ -38,7 +39,7 @@ export class RestapiService {
       );
   }
   
-  getProduct(id): Observable<Userdata> {debugger;
+  getProduct(id): Observable<Userdata> {
     const url = `${endpoint}/${id}`;
     return this.http.get<Userdata>(url).pipe(
       tap(_ => console.log(`fetched product id=${id}`)),
@@ -52,6 +53,8 @@ export class RestapiService {
       catchError(this.handleError<Userdata>('addProduct'))
     );
   }
+
+ 
   
   updateProduct(id, product): Observable<Userdata> {
     const url = `${endpoint}/${id}`;

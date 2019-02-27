@@ -1,40 +1,4 @@
-<!-- <form #userform="ngForm" (ngSubmit)="submitForm(userform)">
-    <div class="card">
-            <div class="card-header">
-                <h3>Create Form</h3>
-            </div>
-            <div class="card-body">
-<div class="form-group">
-      <label for="name">Name</label>
-      <input type="text" class="form-control" [(ngModel)]="userformdata.name" id="name" name="name"  placeholder="Name">
-      <small  class="form-text text-muted">Enter your valid name</small>
-    </div>
-    <div class="form-group">
-      <label for="gender">Gender</label>
-      <input type="text" class="form-control" [(ngModel)]="userformdata.gender" id="gender" name="gender" placeholder="Gender">
-    </div>
-    
-      <div class="form-group">
-        <label for="mobile">Mobile</label>
-        <input type="text" class="form-control" [(ngModel)]="userformdata.mobile" id="mobile" name="mobile" placeholder="Mobile">
-      </div>
-      <div class="form-group">
-        <label for="amount_paid">Amount Paid</label>
-        <input type="text" class="form-control" [(ngModel)]="userformdata.amount" id="amount" name="amount" placeholder="Amount Paid">
-      </div>
-      <div class="form-group">
-        <label for="balance">Balance</label>
-        <input type="text" class="form-control" [(ngModel)]="userformdata.balance" id="balance" name="balance" placeholder="Balance">
-      </div>
-    
-     
-            </div>
-            <div class="card-footer">
-    
-    <button type="submit" class="btn btn-primary">Save</button>
-</div>
-</div>
-  </form> -->
+
   <div class="example-container mat-elevation-z8">
     
     <div class="button-row">
@@ -57,11 +21,8 @@
           </mat-error>
         </mat-form-field>
         <mat-form-field class="example-full-width">
-          <input matInput placeholder="Mobile" formControlName="mobile"
-                 [errorStateMatcher]="matcher">
-          <mat-error>
-            <span *ngIf="!productForm.get('mobile').valid && productForm.get('mobile').touched">Please enter Product Price</span>
-          </mat-error>
+          <input matInput placeholder="Mobile" formControlName="mobile">
+         
         </mat-form-field>
         <mat-form-field class="example-full-width">
           <input matInput placeholder="Balance" formControlName="balance"
@@ -71,10 +32,10 @@
           </mat-error>
         </mat-form-field>
         <mat-form-field class="example-full-width">
-          <input matInput placeholder="Amount" formControlName="amount"
-                 [errorStateMatcher]="matcher">
+          <textarea matInput placeholder="Comment" formControlName="comment"
+                 [errorStateMatcher]="matcher"></textarea>
           <mat-error>
-            <span *ngIf="!productForm.get('amount').valid && productForm.get('amount').touched">Please enter Product Price</span>
+            <span *ngIf="!productForm.get('comment').valid && productForm.get('comment').touched">Please enter Comment</span>
           </mat-error>
         </mat-form-field>
         <div class="button-row">

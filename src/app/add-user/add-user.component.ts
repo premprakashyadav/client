@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormControl, FormGroupDirective, FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
-import { Userdata } from '../models/user';
+import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { RestapiService } from '../services/core/restapi.service';
 
 
@@ -15,7 +14,7 @@ productForm: FormGroup;
 name = '';
 gender = '';
 mobile: number = null;
-amount: number = null;
+comment = '';
 balance: number = null;
 
   constructor(public rest: RestapiService, private router: Router, private formBuilder: FormBuilder) { }
@@ -24,8 +23,8 @@ balance: number = null;
     this.productForm = this.formBuilder.group({
       name : [null, Validators.required],
       gender : [null, Validators.required],
-      mobile : [null, Validators.required],
-      amount : [null, Validators.required],
+      mobile : [null],
+      comment : [null, Validators.required],
       balance : [null, Validators.required]
     });
   }

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute} from '@angular/router';
-import { FormControl, FormGroupDirective, FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
-import { Userdata } from '../models/user';
+import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { RestapiService } from '../services/core/restapi.service';
 
 @Component({
@@ -15,17 +14,17 @@ export class EditUserComponent implements OnInit {
   name = '';
   gender = '';
   mobile: number = null;
-  amount: number = null;
+  comment = '';
   balance: number = null;
   constructor(public rest: RestapiService, private route: ActivatedRoute, private router: Router, private formBuilder: FormBuilder) { }
 
-  ngOnInit() {debugger;
+  ngOnInit() {
     this.getProduct(this.route.snapshot.params['id']);
     this.productForm = this.formBuilder.group({
       name : [null, Validators.required],
       gender : [null, Validators.required],
-      mobile : [null, Validators.required],
-      amount : [null, Validators.required],
+      mobile : [null],
+      comment : [null, Validators.required],
       balance : [null, Validators.required]
     });
   }
@@ -37,7 +36,7 @@ export class EditUserComponent implements OnInit {
         name: data.name,
         gender: data.gender,
         mobile: data.mobile,
-        amount: data.amount,
+        comment: data.comment,
         balance: data.balance
       });
     });

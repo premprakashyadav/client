@@ -20,11 +20,8 @@
         </mat-error>
       </mat-form-field>
       <mat-form-field class="example-full-width">
-        <input matInput placeholder="Mobile" formControlName="mobile"
-               [errorStateMatcher]="matcher">
-        <mat-error>
-          <span *ngIf="!productForm.get('mobile').valid && productForm.get('mobile').touched">Please enter Mobile</span>
-        </mat-error>
+        <input matInput placeholder="Mobile" formControlName="mobile">
+       
       </mat-form-field>
       <mat-form-field class="example-full-width">
         <input matInput placeholder="Balance" formControlName="balance"
@@ -34,10 +31,10 @@
         </mat-error>
       </mat-form-field>
       <mat-form-field class="example-full-width">
-        <input matInput placeholder="Amount" formControlName="amount"
-               [errorStateMatcher]="matcher">
+        <textarea matInput placeholder="Comment" formControlName="comment"
+               [errorStateMatcher]="matcher"></textarea>
         <mat-error>
-          <span *ngIf="!productForm.get('amount').valid && productForm.get('amount').touched">Please enter Amount</span>
+          <span *ngIf="!productForm.get('comment').valid && productForm.get('comment').touched">Please enter Comment</span>
         </mat-error>
       </mat-form-field>
       <div class="button-row">

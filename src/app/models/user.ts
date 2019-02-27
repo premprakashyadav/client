@@ -3,7 +3,7 @@ export class Userdata {
    name: string;
     gender: string;
     mobile: number;
-    amount: number;
+    comment: string;
     balance: number;
     updatedAt?: string;
 }
